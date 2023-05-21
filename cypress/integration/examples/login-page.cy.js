@@ -12,6 +12,8 @@ describe("Check the Login Page", function () {
   it("Check the Error Message If the Login and Password Fields are Empty", function () {
     loginPage.elements.loginButton().should("be.visible").click();
     loginPage.elements.loginForm().should("be.visible");
+    loginPage.elements.emailInputField().should("have.value", "");
+    loginPage.elements.passwordInputField().should("have.value", "");
     loginPage.elements.submitButton().should("be.visible").click();
     loginPage.validateErrorMessages();
   });
