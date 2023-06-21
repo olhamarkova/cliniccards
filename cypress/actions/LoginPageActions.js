@@ -41,4 +41,24 @@ export class LoginPageActions {
       .should("be.visible")
       .and("have.css", "color", "rgb(243, 86, 93)");
   }
+
+  recoveryPassword() {
+    loginPage.elements.recoveryPasswordLink().should("be.visible").click();
+  }
+
+  validateEmptyEmailField() {
+    loginPage.elements.recoveryPasswordForm().should("be.visible");
+    loginPage.elements.emailInputField().should("have.value", "");
+  }
+
+  recoveryPasswordSubmit() {
+    loginPage.elements.recoveryPasswordSubmitButton().click();
+  }
+
+  validateRecoveryErrorMessage() {
+    loginPage.elements
+      .emailErrorMessage()
+      .should("be.visible")
+      .and("have.text", errorsUA.emailError);
+  }
 }
