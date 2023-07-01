@@ -1,9 +1,11 @@
 /// <reference types="cypress" />
 
 import { LoginPage } from "../page-objects/LoginPage.js";
+import { RecoveryPassword } from "../page-objects/RecoveryPassword.js";
 import { errorsUA } from "../test-data/errors.js";
 
 const loginPage = new LoginPage();
+const recovery = new RecoveryPassword();
 
 export class LoginPageActions {
   openLoginPage() {
@@ -42,22 +44,26 @@ export class LoginPageActions {
       .and("have.css", "color", "rgb(243, 86, 93)");
   }
 
+  // Recovery Password Page Assertions
+
   recoveryPassword() {
     loginPage.elements.recoveryPasswordLink().should("be.visible").click();
   }
 
   validateEmptyEmailField() {
-    loginPage.elements.recoveryPasswordForm().should("be.visible");
-    loginPage.elements.emailInputField().should("have.value", "");
+    recovery.elements.recoveryPasswordForm().should("be.visible");
+    recovery.elements
+      .recoveryPassowrdEmailInputField()
+      .should("have.value", "");
   }
 
   recoveryPasswordSubmit() {
-    loginPage.elements.recoveryPasswordSubmitButton().click();
+    recovery.elements.recoveryPasswordSubmitButton().click();
   }
 
   validateRecoveryErrorMessage() {
-    loginPage.elements
-      .emailErrorMessage()
+    recovery.elements
+      .recoveryPasswordError()
       .should("be.visible")
       .and("have.text", errorsUA.emailError);
   }

@@ -8,13 +8,9 @@ export class LoginPage {
     passwordInputField: () => cy.get("#password"),
     submitButton: () => cy.get("button[type='submit']"),
     emailErrorMessage: () => cy.get("#emailError"),
-    passwordErrorMessage: () => cy.get("#loginForm div:nth-child(10) span"),
+    passwordErrorMessage: () => cy.get(".help-block").eq(1),
     lockIcon: () => cy.get(".fa-lock"),
     envelopeIcon: () => cy.get(".fa-envelope"),
     recoveryPasswordLink: () => cy.get(".create-account .pull-right a"),
-    recoveryPasswordForm: () => cy.get(".loginFormWrap"),
-    recoveryPasswordSubmitButton: () => cy.get(".form-actions .btn"),
-    recoveryPassowrdEmailInputField: () => cy.get("#email"),
-    recoveryPasswordError: () => cy.get("#emailError"),
   };
 }
