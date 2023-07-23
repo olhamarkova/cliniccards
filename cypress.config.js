@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   env: {
-    url: "https://dev.cliniccards.com/",
+    url: "https://cliniccards.com/",
   },
   e2e: {
     setupNodeEvents(on, config) {
