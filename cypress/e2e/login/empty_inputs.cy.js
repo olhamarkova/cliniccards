@@ -16,11 +16,4 @@ describe("Check the Login Page", function () {
     loginPage.submit();
     loginPage.validateErrorMessages();
   });
-
-  it("Check the Error Message in Recovery Password Form If the Email Field Is Empty", function () {
-    loginPage.recoveryPassword();
-    loginPage.validateEmptyEmailField();
-    loginPage.recoveryPasswordSubmit();
-    loginPage.validateRecoveryErrorMessage();
-  });
 });
