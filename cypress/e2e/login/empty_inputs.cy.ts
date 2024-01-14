@@ -3,13 +3,13 @@ import { error, color } from "../../support/service/test_data_service.ts";
 
 const loginPage = new LoginPage();
 
-describe("Leave Inputs Empty", function () {
+describe("Leave The Login Form Inputs Empty", function () {
   beforeEach(function () {
     cy.visitCC("");
     loginPage.openLoginPage();
   });
 
-  it("Check the Error Message If the Login and Password Input Fields are Empty", function () {
+  it("Check The Error Message If The Login And The Password Input Fields Are Empty", function () {
     loginPage.validateLoginForm();
     loginPage.validateInput("email", "");
     loginPage.validateInput("password", "");
