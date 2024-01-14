@@ -5,7 +5,7 @@ const loginPage = new LoginPage();
 
 describe("Leave Inputs Empty", function () {
   beforeEach(function () {
-    cy.visit(Cypress.env("url") + "ua");
+    cy.visitCC("");
     loginPage.openLoginPage();
   });
 
