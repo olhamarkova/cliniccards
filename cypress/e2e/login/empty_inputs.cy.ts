@@ -9,7 +9,7 @@ describe("Leave The Login Form Inputs Empty", function () {
     loginPage.openLoginPage();
   });
 
-  it("Check The Error Message If The Login And The Password Input Fields Are Empty", function () {
+  it("User Shall See The Error Message When Submit An Empty Login Form", function () {
     loginPage.validateLoginForm();
     loginPage.validateInput("email", "");
     loginPage.validateInput("password", "");
