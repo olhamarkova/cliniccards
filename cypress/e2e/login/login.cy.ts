@@ -13,12 +13,12 @@ describe("Login Form Spec", function () {
     loginPage.validateLoginForm();
     loginPage.validateInput("email", "");
     loginPage.validateInput("password", "");
-    loginPage.validateIcon("envelope", color.grey);
-    loginPage.validateIcon("lock", color.grey);
+    loginPage.validateIcon("envelope", color.Grey);
+    loginPage.validateIcon("lock", color.Grey);
     loginPage.submit();
     loginPage.validateErrorMessage(0, error.emailError);
     loginPage.validateErrorMessage(1, error.passwordError);
-    loginPage.validateIcon("envelope", color.red);
-    loginPage.validateIcon("lock", color.red);
+    loginPage.validateIcon("envelope", color.Red);
+    loginPage.validateIcon("lock", color.Red);
   });
 });
