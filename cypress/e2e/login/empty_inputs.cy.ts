@@ -3,7 +3,7 @@ import { error, color } from "../../support/service/test_data_service.ts";
 
 const loginPage = new LoginPage();
 
-describe("Leave The Login Form Inputs Empty", function () {
+describe("Login Form Spec", function () {
   beforeEach(function () {
     cy.visitCC("");
     loginPage.openLoginPage();
